@@ -9,7 +9,7 @@ public class PlayerMoves : MonoBehaviour
     public GameManager gM;
     void Start()
     {
-        gM = GameObject.Find("GameManager").GetComponent<GameManager>;
+        gM = GameObject.Find("GameManager").GetComponent<GameManager>();
         playerRb = GetComponent<Rigidbody2D>();
 
     }
@@ -17,7 +17,7 @@ public class PlayerMoves : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Jump") && gM.isGameOver == false)
+        if(Input.GetButtonDown("Jump") && gM.IsGameOver == false)
         {
             playerRb.AddForce(forcaPulo);
             playerRb.velocity = new Vector2(0, 0);
@@ -28,7 +28,7 @@ public class PlayerMoves : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstaculo")
         {
-            gM.isGameOver = true;
+            gM.IsGameOver = true;
         }
     }
 }
