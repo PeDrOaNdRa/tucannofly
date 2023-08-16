@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
         if(intervalo <= Time.time && IsGameOver == false)
         {
-            Instantiate(obstaculo, new Vector3(10, Random.Range(-3, 6),0), Quaternion.identity);
+            Instantiate(obstaculo, new Vector3(10, Random.Range(-3, 4),0), Quaternion.identity);
             intervalo = Time.time + delay;
         }
     }
