@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1c8148790c559f748a865e98327cd54b
+guid: 6f86cf8e43d57fd40aecf701fab08ebd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Asteroid 03
+      name: SptStar_0
       rect:
         serializedVersion: 2
-        x: 92
-        y: 90
-        width: 112
-        height: 64
+        x: 23
+        y: 19
+        width: 9
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a438d89b564ac245b7ba5f9c416daa1
-      internalID: 2051779534
+      spriteID: 2cced9c6c7410374abb7c6e3f370cd4d
+      internalID: 2054570491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Asteroid 02
+      name: SptStar_1
       rect:
         serializedVersion: 2
-        x: 230
-        y: 91
-        width: 110
-        height: 68
+        x: 33
+        y: 4
+        width: 10
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,29 +176,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d1eeb0c8b82a31418db8761e68c2c45
-      internalID: -1214513584
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Asteroid 01
-      rect:
-        serializedVersion: 2
-        x: 368
-        y: 97
-        width: 111
-        height: 66
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da94b7454be07674fb71a43338aafc8a
-      internalID: -1984726483
+      spriteID: 38acca7c27ffcd94d832ff5dacc3699d
+      internalID: -704014234
       vertices: []
       indices: 
       edges: []
@@ -214,9 +193,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Asteroid 02: -1214513584
-      Asteroid 01: -1984726483
-      Asteroid 03: 2051779534
+      SptStar_0: 2054570491
+      SptStar_1: -704014234
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
