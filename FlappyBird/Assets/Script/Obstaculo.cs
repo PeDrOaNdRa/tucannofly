@@ -29,6 +29,7 @@ public class Obstaculo : MonoBehaviour
         if(transform.position.x <= -10)
         {
             Destroy(gameObject);
+            gM.pontuacaof++;
         }
     }
 }
