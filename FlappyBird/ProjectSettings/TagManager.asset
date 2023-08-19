@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Obstaculo
+  - Municao
+  - RayGun
+  - 2XCoin
   layers:
   - Default
   - TransparentFX

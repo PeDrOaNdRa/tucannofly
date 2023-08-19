@@ -7,6 +7,7 @@ public class PlayerMoves : MonoBehaviour
     private Rigidbody2D playerRb;
     public Vector2 forcaPulo;
     public GameManager gM;
+    
     void Start()
     {
         gM = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -22,6 +23,7 @@ public class PlayerMoves : MonoBehaviour
             playerRb.AddForce(forcaPulo);
             playerRb.velocity = new Vector2(0, 0);
         }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -31,4 +33,18 @@ public class PlayerMoves : MonoBehaviour
             gM.IsGameOver = true;
         }
     }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "RayGun")
+        {
+            gM.ImWithRayGun = true;
+            Destroy(collision.gameObject);
+        }
+         if (collision.gameObject.tag == "2XCoin")
+         {
+            gM.Xcoin = true;
+            Destroy(collision.gameObject);
+         }
+    }
+    
 }

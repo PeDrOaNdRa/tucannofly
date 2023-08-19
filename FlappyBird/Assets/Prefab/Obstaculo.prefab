@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  municao: {fileID: 2573559205382888086, guid: ebb24dd2ef0472c4fbc10d5039f31bd7, type: 3}
 --- !u!58 &7332237379489092430
 CircleCollider2D:
   m_ObjectHideFlags: 0
