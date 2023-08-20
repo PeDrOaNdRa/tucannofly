@@ -7,12 +7,13 @@ public class PlayerMoves : MonoBehaviour
     private Rigidbody2D playerRb;
     public Vector2 forcaPulo;
     public GameManager gM;
+    //private Animator anim;
     
     void Start()
     {
         gM = GameObject.Find("GameManager").GetComponent<GameManager>();
         playerRb = GetComponent<Rigidbody2D>();
-
+        //anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame

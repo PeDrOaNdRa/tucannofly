@@ -14,13 +14,15 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI pontuacao;
     public float velocidadeDisparo;
     public int spawnEnemy;
+    //private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        //anim = GetComponent<Animator>();
         pontuacaof = 0;
         intervalo = Time.time + delay;
-        spawnEnemy = Random.Range(-5, 6);
+        spawnEnemy = Random.Range(-3, 6);
         pontuacao.text = "0";
         RespawnRayGunManager();
     }
@@ -30,15 +32,11 @@ public class GameManager : MonoBehaviour
     {
         RespawnManager();
 
-        /*if (Xcoin == true)
-        {
-            pontuacaof = pontuacaof + 2;
-        }*/
         pontuacao.text = pontuacaof.ToString();
 
         if (Input.GetButtonDown("Fire1") && IsGameOver == false && ImWithRayGun == true)
         {
-            //anim.SetTrigger("disparo");
+            //anim.SetTrigger("fire");
 
             GameObject temp = Instantiate(municao);
 
