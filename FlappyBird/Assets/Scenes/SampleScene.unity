@@ -2145,7 +2145,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsGameOver: 0
   ImWithRayGun: 0
-  Xcoin: 0
   obstaculo: {fileID: 8437210096820893555, guid: 7561bd3e346c7344a9ec80be8ab28928, type: 3}
   obstaculo_i: {fileID: 5771815928359312820, guid: 1aff3775e29df8044a3b067ddcbb9d17, type: 3}
   localDisparo: {fileID: 2007676604}
@@ -2153,8 +2152,9 @@ MonoBehaviour:
   raygun: {fileID: 6079016774991017847, guid: b271726296304e8498eff5f933dca93f, type: 3}
   delay: 2.7
   pontuacaof: 0
-  pontuacao: {fileID: 522003796}
+  intervalo: 0
   velocidadeDisparo: 5
+  pontuacao: {fileID: 522003796}
   spawnEnemy: 0
 --- !u!4 &1358987258
 Transform:
@@ -2243,12 +2243,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2141978482, guid: d3fac0bde9e58af45a791d0ae9307a4f, type: 3}
+  m_Sprite: {fileID: 1822124946, guid: d3fac0bde9e58af45a791d0ae9307a4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.66, y: 0.46}
+  m_Size: {x: 0.33846155, y: 0.23589744}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2785,7 +2785,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007676604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1815, y: -0.1231, z: 0}
+  m_LocalPosition: {x: 0.17216, y: -0.14155, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d3fac0bde9e58af45a791d0ae9307a4f
+guid: 317cdf21eee0e654bba5d4c2de0d7bd0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 195
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AlienSheet_0
+      name: AlienSheet - raygun_0
       rect:
         serializedVersion: 2
-        x: 148
-        y: 115
-        width: 66
-        height: 46
+        x: 418
+        y: 60
+        width: 42
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,113 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e45d027cea4d0af48bc5145d25986b8f
-      internalID: 1822124946
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AlienSheet_1
-      rect:
-        serializedVersion: 2
-        x: 230
-        y: 115
-        width: 66
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: add16fecb78c9fd489f8ef0eb95205fb
-      internalID: 1698111730
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AlienSheet_2
-      rect:
-        serializedVersion: 2
-        x: 312
-        y: 115
-        width: 66
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9538e27064e950545bdc2643b3a5e31e
-      internalID: 251297809
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AlienSheet_3
-      rect:
-        serializedVersion: 2
-        x: 152
-        y: 38
-        width: 66
-        height: 56
-      alignment: 9
-      pivot: {x: 0.4998051, y: 0.5912767}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db90e4ca3e23b1946a48efb2f3a147f6
-      internalID: -1746765765
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AlienSheet_4
-      rect:
-        serializedVersion: 2
-        x: 231
-        y: 39
-        width: 68
-        height: 56
-      alignment: 9
-      pivot: {x: 0.48494586, y: 0.60635185}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85b28366fee9cc748b5c0f6185f127f3
-      internalID: -787101009
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AlienSheet_5
-      rect:
-        serializedVersion: 2
-        x: 312
-        y: 38
-        width: 71
-        height: 56
-      alignment: 9
-      pivot: {x: 0.4636626, y: 0.5882146}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afdbdf0330527614c8641d9e1954aa5e
-      internalID: 508278572
+      spriteID: 7a1dc72a56b8b314eb47602a80b87e2c
+      internalID: 380423504
       vertices: []
       indices: 
       edges: []
@@ -241,12 +136,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AlienSheet_3: -1746765765
-      AlienSheet_5: 508278572
-      AlienSheet_1: 1698111730
-      AlienSheet_0: 1822124946
-      AlienSheet_2: 251297809
-      AlienSheet_4: -787101009
+      AlienSheet - raygun_0: 380423504
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

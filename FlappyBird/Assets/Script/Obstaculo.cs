@@ -28,40 +28,23 @@ public class Obstaculo : MonoBehaviour
 
     void DestruirObjeto()
     {
-        if(transform.position.x <= -10 && gM.Xcoin == false)
+        if (transform.position.x <= -10)
         {
             Destroy(gameObject);
             if (gM.IsGameOver == false)
             {
                 gM.pontuacaof++;
             }
-        }
-        if (transform.position.x <= -10 && gM.Xcoin == true)
-        {
-            Destroy(gameObject);
-            if (gM.IsGameOver == false)
-            {
-                gM.pontuacaof++;
-                gM.pontuacaof++;
-            }
+
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Municao" && gM.Xcoin == false)
+        if (collision.gameObject.tag == "Municao")
         {
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
-            gM.pontuacaof++;
-        }
-
-
-        if (collision.gameObject.tag == "Municao" && gM.Xcoin == true)
-        {
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
-            gM.pontuacaof++;
             gM.pontuacaof++;
         }
     }
-}
+} 

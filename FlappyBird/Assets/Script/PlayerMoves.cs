@@ -7,13 +7,13 @@ public class PlayerMoves : MonoBehaviour
     private Rigidbody2D playerRb;
     public Vector2 forcaPulo;
     public GameManager gM;
-    //private Animator anim;
+    private Animator anim;
     
     void Start()
     {
         gM = GameObject.Find("GameManager").GetComponent<GameManager>();
         playerRb = GetComponent<Rigidbody2D>();
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class PlayerMoves : MonoBehaviour
             playerRb.AddForce(forcaPulo);
             playerRb.velocity = new Vector2(0, 0);
         }
-        
+        fire();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -41,11 +41,19 @@ public class PlayerMoves : MonoBehaviour
             gM.ImWithRayGun = true;
             Destroy(collision.gameObject);
         }
-         if (collision.gameObject.tag == "2XCoin")
-         {
-            gM.Xcoin = true;
-            Destroy(collision.gameObject);
-         }
+    }
+    private void fire()
+    {
+        if (Input.GetButtonDown("Fire1") && gM.IsGameOver == false && gM.ImWithRayGun == true)
+        {
+            GameObject temp = Instantiate(gM.municao);
+
+            temp.transform.position = gM.localDisparo.transform.position;
+
+            temp.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(gM.velocidadeDisparo, 0);
+            Destroy(temp.gameObject, 2);
+            anim.SetTrigger("fire");
+        }
     }
     
 }
