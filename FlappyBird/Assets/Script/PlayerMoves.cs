@@ -46,13 +46,15 @@ public class PlayerMoves : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") && gM.IsGameOver == false && gM.ImWithRayGun == true)
         {
+
+            anim.SetTrigger("fire");
             GameObject temp = Instantiate(gM.municao);
 
             temp.transform.position = gM.localDisparo.transform.position;
 
             temp.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(gM.velocidadeDisparo, 0);
             Destroy(temp.gameObject, 2);
-            anim.SetTrigger("fire");
+            
         }
     }
     

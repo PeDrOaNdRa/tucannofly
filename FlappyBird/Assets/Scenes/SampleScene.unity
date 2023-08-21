@@ -260,7 +260,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 117.600006, y: -43.800003}
+  m_AnchoredPosition: {x: 117.599976, y: -43.799988}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &37737095
@@ -896,7 +896,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 162.79999, y: -43.300003}
+  m_AnchoredPosition: {x: 162.79999, y: -43.299988}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &522003796
@@ -2156,6 +2156,8 @@ MonoBehaviour:
   velocidadeDisparo: 5
   pontuacao: {fileID: 522003796}
   spawnEnemy: 0
+  speedToAdd: 0
+  checarPontuacao: 10
 --- !u!4 &1358987258
 Transform:
   m_ObjectHideFlags: 0

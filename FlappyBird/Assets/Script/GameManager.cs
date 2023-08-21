@@ -12,13 +12,16 @@ public class GameManager : MonoBehaviour
     public float pontuacaof,intervalo,velocidadeDisparo;
     public TextMeshProUGUI pontuacao;
     public int spawnEnemy;
+    public float speedToAdd;
+    public float checarPontuacao = 11;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         pontuacaof = 0;
         intervalo = Time.time + delay;
-        spawnEnemy = Random.Range(-3, 6);
+        spawnEnemy = Random.Range(-3, 7);
         pontuacao.text = "0";
         RespawnRayGunManager();
     }
@@ -26,10 +29,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Dificuldade();
+
         RespawnManager();
 
         pontuacao.text = pontuacaof.ToString();
-
+        
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -54,7 +59,15 @@ public class GameManager : MonoBehaviour
     {
         if (spawnEnemy >= 0 )
         {
-            Instantiate(raygun, new Vector3(Random.Range(14, 17), Random.Range(-4, 6), 0), Quaternion.identity);
+            Instantiate(raygun, new Vector3(Random.Range(14, 17), Random.Range(-4, 5), 0), Quaternion.identity);
+        }
+    }
+    void Dificuldade()
+    {
+        if (checarPontuacao == pontuacaof)
+        {
+            speedToAdd += 1;
+            checarPontuacao = checarPontuacao + 1;
         }
     }
 } 
