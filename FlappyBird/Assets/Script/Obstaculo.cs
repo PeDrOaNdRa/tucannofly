@@ -39,12 +39,11 @@ public class Obstaculo : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Municao")
+        if (collision.gameObject.tag == "Projetil")
         {
             gM.pontuacaof++;
             Destroy(collision.gameObject);
-            Destroy(this.gameObject);
-            
+            Destroy(this.gameObject);            
         }
     }
 } 

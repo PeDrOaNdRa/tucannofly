@@ -8,6 +8,11 @@ public class PlayerMoves : MonoBehaviour
     public Vector2 forcaPulo;
     public GameManager gM;
     private Animator anim;
+
+    private float quantMunicao;
+    public Transform localDisparo;
+    public GameObject projetil;
+
     
     void Start()
     {
@@ -24,7 +29,9 @@ public class PlayerMoves : MonoBehaviour
             playerRb.AddForce(forcaPulo);
             playerRb.velocity = new Vector2(0, 0);
         }
+
         fire();
+        gM.quantMunin.text = quantMunicao.ToString();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -38,24 +45,32 @@ public class PlayerMoves : MonoBehaviour
     {
         if(collision.gameObject.tag == "RayGun")
         {
-            gM.ImWithRayGun = true;
+            //gM.ImWithRayGun = true;
+            quantMunicao += 5;
             Destroy(collision.gameObject);
         }
     }
     private void fire()
     {
-        if (Input.GetButtonDown("Fire1") && gM.IsGameOver == false && gM.ImWithRayGun == true)
+        /*
+        if (Input.GetButtonDown("Fire1") && gM.IsGameOver == false && quantLaser > 0)
         {
-
+            quantMunicao--;
             anim.SetTrigger("fire");
             GameObject temp = Instantiate(gM.municao);
 
             temp.transform.position = gM.localDisparo.transform.position;
 
             temp.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(gM.velocidadeDisparo, 0);
-            Destroy(temp.gameObject, 2);
-            
+            Destroy(temp.gameObject, 2);        
         }
-    }
-    
+        */
+
+        if(Input.GetButtonDown("Fire1") && !gM.IsGameOver && quantMunicao > 0)
+        {
+            quantMunicao--;
+            Instantiate(projetil, localDisparo.position, Quaternion.identity);
+            anim.SetTrigger("fire");
+        }
+    }    
 }
