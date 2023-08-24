@@ -8,6 +8,7 @@ TagManager:
   - Municao
   - RayGun
   - 2XCoin
+  - Projetil
   layers:
   - Default
   - TransparentFX
