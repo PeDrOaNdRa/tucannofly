@@ -11,7 +11,7 @@ public class PlayerMoves : MonoBehaviour
 
     private float quantMunicao;
     public Transform localDisparo;
-    public GameObject projetil;
+    public GameObject projetil, sensorTeto;
 
     
     void Start()
@@ -32,6 +32,7 @@ public class PlayerMoves : MonoBehaviour
 
         fire();
         gM.quantMunin.text = quantMunicao.ToString();
+        gM.checarMunin = quantMunicao;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -45,27 +46,12 @@ public class PlayerMoves : MonoBehaviour
     {
         if(collision.gameObject.tag == "RayGun")
         {
-            //gM.ImWithRayGun = true;
             quantMunicao += 5;
             Destroy(collision.gameObject);
         }
     }
     private void fire()
     {
-        /*
-        if (Input.GetButtonDown("Fire1") && gM.IsGameOver == false && quantLaser > 0)
-        {
-            quantMunicao--;
-            anim.SetTrigger("fire");
-            GameObject temp = Instantiate(gM.municao);
-
-            temp.transform.position = gM.localDisparo.transform.position;
-
-            temp.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(gM.velocidadeDisparo, 0);
-            Destroy(temp.gameObject, 2);        
-        }
-        */
-
         if(Input.GetButtonDown("Fire1") && !gM.IsGameOver && quantMunicao > 0)
         {
             quantMunicao--;

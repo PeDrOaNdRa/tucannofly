@@ -16,5 +16,13 @@ public class Projetil : MonoBehaviour
     void Update()
     {
         transform.position = new Vector2(transform.position.x + speed * Time.deltaTime, transform.position.y);
+        //DestruirObjeto();
     }
+    /*void DestruirObjeto()
+    {
+        if (transform.position.x <= 10)
+        {
+            Destroy(gameObject);
+        }
+    }*/
 }

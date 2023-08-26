@@ -9,6 +9,8 @@ TagManager:
   - RayGun
   - 2XCoin
   - Projetil
+  - SensorTeto
+  - teto
   layers:
   - Default
   - TransparentFX

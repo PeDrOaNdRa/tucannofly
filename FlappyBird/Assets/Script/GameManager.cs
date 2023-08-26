@@ -9,13 +9,14 @@ public class GameManager : MonoBehaviour
     public GameObject obstaculo, obstaculo_i, municao;
 
     public float delay = 3;
-    public float delayMunicao = 13;
+    public float delayMunicao = 20;
     public float pontuacaof,intervalo,intervaloMunicao,velocidadeDisparo;
     public TextMeshProUGUI pontuacao,quantMunin;
     public int spawnEnemy;
     public float speedToAdd;
     public float checarPontuacao = 10;
-    
+    public float checarMunin;
+
 
     // Start is called before the first frame update
     void Start()
@@ -46,14 +47,20 @@ public class GameManager : MonoBehaviour
     {
         if(intervalo <= Time.time)
         {
-            Instantiate(obstaculo, new Vector3(Random.Range(10, 17), Random.Range(-3, 5), 0), Quaternion.identity);
+
+            Instantiate(obstaculo, new Vector3(Random.Range(11, 17), Random.Range(-3, 5), 0), Quaternion.identity);
             Instantiate(obstaculo, new Vector3(Random.Range(15, 19), Random.Range(-4, 4), 0), Quaternion.identity);
             intervalo = Time.time + delay;
+
+            if (intervaloMunicao <= Time.time && pontuacaof >= 100)
+            {
+                Instantiate(obstaculo, new Vector3(Random.Range(16, 18), Random.Range(4.2f, -4.2f), 0), Quaternion.identity);
+            }
         }
     }
     public void RespawnRayGunManager()
     {
-        if (intervaloMunicao <= Time.time)
+        if (intervaloMunicao <= Time.time && checarMunin != 10)
         {
             Instantiate(municao, new Vector3(Random.Range(14, 17), Random.Range(4.2f, -4.2f), 0), Quaternion.identity);
             intervaloMunicao = Time.time + delayMunicao;

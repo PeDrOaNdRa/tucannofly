@@ -486,7 +486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227548775}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -12.42, z: 0}
+  m_LocalPosition: {x: 0, y: -13.04, z: 0}
   m_LocalScale: {x: 17.78636, y: 1.1225, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1102,7 +1102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525155812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.81, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 17.78636, y: 1.1225, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1508,7 +1508,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 167.3, y: 17.5}
+  m_AnchoredPosition: {x: 176.8, y: 17.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &906534188
@@ -1968,7 +1968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 33.799988, y: 22.399994}
+  m_AnchoredPosition: {x: 43.299988, y: 22.399994}
   m_SizeDelta: {x: 175.19, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1174350949
@@ -2272,7 +2272,7 @@ GameObject:
   - component: {fileID: 1235010716}
   m_Layer: 0
   m_Name: SensorTeto
-  m_TagString: Untagged
+  m_TagString: SensorTeto
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2393,7 +2393,7 @@ MonoBehaviour:
   obstaculo_i: {fileID: 5771815928359312820, guid: 1aff3775e29df8044a3b067ddcbb9d17, type: 3}
   municao: {fileID: 6079016774991017847, guid: b271726296304e8498eff5f933dca93f, type: 3}
   delay: 3
-  delayMunicao: 10
+  delayMunicao: 20
   pontuacaof: 0
   intervalo: 0
   intervaloMunicao: 0
@@ -2403,6 +2403,7 @@ MonoBehaviour:
   spawnEnemy: 0
   speedToAdd: 0
   checarPontuacao: 10
+  checarMunin: 0
 --- !u!4 &1358987258
 Transform:
   m_ObjectHideFlags: 0
@@ -2534,6 +2535,7 @@ MonoBehaviour:
   gM: {fileID: 1358987257}
   localDisparo: {fileID: 2007676605}
   projetil: {fileID: 2573559205382888086, guid: ebb24dd2ef0472c4fbc10d5039f31bd7, type: 3}
+  sensorTeto: {fileID: 1235010715}
 --- !u!50 &1413092920
 Rigidbody2D:
   serializedVersion: 4
