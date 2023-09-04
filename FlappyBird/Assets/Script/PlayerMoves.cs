@@ -12,6 +12,7 @@ public class PlayerMoves : MonoBehaviour
     private float quantMunicao;
     public Transform localDisparo;
     public GameObject projetil, sensorTeto;
+    public ParticleSystem playerFx;
 
     
     void Start()
@@ -39,6 +40,7 @@ public class PlayerMoves : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstaculo")
         {
+            playerFx.Play();
             gM.IsGameOver = true;
         }
     }
