@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Obstaculo : MonoBehaviour
@@ -18,11 +16,9 @@ public class Obstaculo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         transform.position = new Vector3(transform.position.x - speed * Time.deltaTime, transform.position.y, transform.position.z);
 
         DestruirObjeto();
-
     }
 
     void DestruirObjeto()
@@ -43,7 +39,7 @@ public class Obstaculo : MonoBehaviour
         {
             gM.pontuacaof++;
             Destroy(collision.gameObject);
-            Destroy(this.gameObject);            
+            Destroy(this.gameObject);
         }
     }
-} 
+}

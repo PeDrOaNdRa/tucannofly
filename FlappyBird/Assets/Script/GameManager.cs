@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public float checarPontuacao = 10;
     public float checarMunin;
 
+    public GameObject botaoPausar;
+    public GameObject telaPause;
 
     // Start is called before the first frame update
     void Start()
@@ -73,6 +75,21 @@ public class GameManager : MonoBehaviour
             speedToAdd += 0.5f;
             checarPontuacao = checarPontuacao + 10;
         }
+    }
+
+    public void Pausar()
+    {
+        Time.timeScale = 0;
+        botaoPausar.SetActive(false);
+        telaPause.SetActive(true);
+        
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1;
+        botaoPausar.SetActive(true);
+        telaPause.SetActive(false);
     }
 } 
 
