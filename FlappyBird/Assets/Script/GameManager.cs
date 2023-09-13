@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject botaoPausar;
     public GameObject telaPause;
+    public GameObject telaGameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +43,8 @@ public class GameManager : MonoBehaviour
         RespawnManager();
 
         pontuacao.text = pontuacaof.ToString();
-        
+
+        GameOver();
     }
 
     public void RespawnManager()
@@ -76,13 +78,23 @@ public class GameManager : MonoBehaviour
             checarPontuacao = checarPontuacao + 10;
         }
     }
+    public void GameOver()
+    {
+        if(IsGameOver == true)
+        {
+            telaGameOver.SetActive(true);
+            botaoPausar.SetActive(false);
+        }
+    }
 
     public void Pausar()
     {
-        Time.timeScale = 0;
-        botaoPausar.SetActive(false);
-        telaPause.SetActive(true);
-        
+        if (IsGameOver == false)
+        {
+            Time.timeScale = 0;
+            botaoPausar.SetActive(false);
+            telaPause.SetActive(true);
+        }
     }
 
     public void Resume()
