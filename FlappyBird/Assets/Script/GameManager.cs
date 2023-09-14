@@ -5,16 +5,17 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public bool IsGameOver, ImWithRayGun;
+    public bool IsGameOver, ImWithRayGun, IsPaused;
     public GameObject obstaculo, obstaculo_i, municao;
 
     public float delay = 3;
     public float delayMunicao = 20;
     public float pontuacaof,intervalo,intervaloMunicao,velocidadeDisparo;
     public TextMeshProUGUI pontuacao,quantMunin;
-    public int spawnEnemy;
+    public int spawnEnemy, maxObst = 1;
     public float speedToAdd;
-    public float checarPontuacao = 10;
+    public float baseSpeed;
+    public float checarPontuacao = 10, incrementoChecador = 10;
     public float checarMunin;
 
     public GameObject botaoPausar;
@@ -51,9 +52,7 @@ public class GameManager : MonoBehaviour
     {
         if(intervalo <= Time.time)
         {
-
-            Instantiate(obstaculo, new Vector3(Random.Range(11, 17), Random.Range(-3, 5), 0), Quaternion.identity);
-            Instantiate(obstaculo, new Vector3(Random.Range(15, 19), Random.Range(-4, 4), 0), Quaternion.identity);
+            newrespawn();
             intervalo = Time.time + delay;
 
             if (intervaloMunicao <= Time.time && pontuacaof >= 100)
@@ -74,13 +73,22 @@ public class GameManager : MonoBehaviour
     {
         if (checarPontuacao == pontuacaof)
         {
-            speedToAdd += 0.5f;
-            checarPontuacao = checarPontuacao + 10;
+            speedToAdd += baseSpeed;
+            checarPontuacao = checarPontuacao + incrementoChecador;
+            maxObst = maxObst += 1;
+        }
+    }   
+
+    public void newrespawn()
+    {
+        for(int i = 1; i <= maxObst; i++)
+        {
+            Instantiate(obstaculo, new Vector3(Random.Range(11, 17), Random.Range(-3, 5), 0), Quaternion.identity);
         }
     }
     public void GameOver()
     {
-        if(IsGameOver == true)
+        if (IsGameOver == true)
         {
             telaGameOver.SetActive(true);
             botaoPausar.SetActive(false);
@@ -89,19 +97,27 @@ public class GameManager : MonoBehaviour
 
     public void Pausar()
     {
+        IsPaused = true;
         if (IsGameOver == false)
         {
             Time.timeScale = 0;
             botaoPausar.SetActive(false);
             telaPause.SetActive(true);
+
         }
     }
 
     public void Resume()
     {
+        IsPaused = false;
         Time.timeScale = 1;
         botaoPausar.SetActive(true);
         telaPause.SetActive(false);
+    }
+
+    public void Quitar()
+    {
+        Application.Quit();
     }
 } 
 

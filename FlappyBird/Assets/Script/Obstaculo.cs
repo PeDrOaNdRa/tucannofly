@@ -6,9 +6,12 @@ public class Obstaculo : MonoBehaviour
 
     private GameManager gM;
 
+    private Animator animObst; 
+
     // Start is called before the first frame update
     void Start()
     {
+        animObst = GetComponent<Animator>();
         gM = GameObject.Find("GameManager").GetComponent<GameManager>();
         speed += gM.speedToAdd;
     }
@@ -35,11 +38,24 @@ public class Obstaculo : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Projetil")
+        if (collision.gameObject.tag == "Projetil" || collision.gameObject.tag == "player")
         {
             gM.pontuacaof++;
             Destroy(collision.gameObject);
-            Destroy(this.gameObject);
+            animObst.SetTrigger("expObst");
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "player")
+        {
+            animObst.SetTrigger("expObst");
+        }
+    }
+
+    public void Destruir()
+    {
+        Destroy(this.gameObject);
     }
 }

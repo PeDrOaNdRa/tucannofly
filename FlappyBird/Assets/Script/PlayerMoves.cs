@@ -52,7 +52,7 @@ public class PlayerMoves : MonoBehaviour
     }
     private void fire()
     {
-        if (Input.GetButtonDown("Fire1") && !gM.IsGameOver && quantMunicao > 0)
+        if (Input.GetButtonDown("Fire1") && !gM.IsGameOver && quantMunicao > 0 && gM.IsPaused == false)
         {
             quantMunicao--;
             Instantiate(projetil, localDisparo.position, Quaternion.identity);
