@@ -8,12 +8,15 @@ public class EnemyMoves : MonoBehaviour
     public float speed, speedY,posicao69,altura,alturaMax;
     public Vector2 posTop,posBot,posToGo;
 
+    public GameManager gM;
+
 
     // Start is called before the first frame update
     void Start()
     {
 
         enemyRb = GetComponent<Rigidbody2D>();
+        gM = GameObject.Find("GameManager").GetComponent<GameManager>();
 
     }
 

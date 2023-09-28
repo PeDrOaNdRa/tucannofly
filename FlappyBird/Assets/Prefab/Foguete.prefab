@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5147686961475466097}
   - component: {fileID: 8693384244902623983}
   - component: {fileID: -5229018191394658486}
+  - component: {fileID: 1987547100}
   m_Layer: 0
   m_Name: Foguete
   m_TagString: Untagged
@@ -98,7 +99,7 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -153,12 +154,33 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1987547100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286343360132725658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f793416cb6d076447a3e2a41be4c2243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2.5
+  speedY: 0.01
+  posicao69: 5.98
+  altura: 0
+  alturaMax: 0
+  posTop: {x: 5.98, y: 3.08}
+  posBot: {x: 5.98, y: -4}
+  posToGo: {x: 5.98, y: 3.08}
+  gM: {fileID: 0}
 --- !u!1 &519049032075012655
 GameObject:
   m_ObjectHideFlags: 0

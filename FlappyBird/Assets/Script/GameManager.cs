@@ -6,7 +6,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public bool IsGameOver, ImWithRayGun, IsPaused;
-    public GameObject obstaculo, obstaculo_i, municao;
+    public GameObject obstaculo, obstaculo_i, municao, enemy;
 
     public float delay = 3;
     public float delayMunicao = 20;
@@ -21,6 +21,10 @@ public class GameManager : MonoBehaviour
     public GameObject botaoPausar;
     public GameObject telaPause;
     public GameObject telaGameOver;
+    public GameObject gameCanva;
+
+    public float contadorInimigo;
+    public float pontoInimigoToAdd = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +35,15 @@ public class GameManager : MonoBehaviour
         spawnEnemy = Random.Range(-3, 7);
         pontuacao.text = "0";
         quantMunin.text = "0";
-        
+
+        contadorInimigo = pontoInimigoToAdd;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         Dificuldade();
 
         RespawnRayGunManager();
@@ -44,6 +51,8 @@ public class GameManager : MonoBehaviour
         RespawnManager();
 
         pontuacao.text = pontuacaof.ToString();
+
+        SpawnEnemy();
 
         GameOver();
     }
@@ -69,6 +78,14 @@ public class GameManager : MonoBehaviour
             intervaloMunicao = Time.time + delayMunicao;
         }
     }
+    public void SpawnEnemy()
+    {
+        if (pontuacaof >= contadorInimigo)
+        {
+            Instantiate(enemy, new Vector3(13.59f,transform.position.y , transform.position.z), Quaternion.identity);
+            contadorInimigo += pontoInimigoToAdd;
+        }
+    }
     void Dificuldade()
     {
         if (checarPontuacao == pontuacaof)
@@ -92,6 +109,7 @@ public class GameManager : MonoBehaviour
         {
             telaGameOver.SetActive(true);
             botaoPausar.SetActive(false);
+            gameCanva.SetActive(false);
         }
     }
 
@@ -103,7 +121,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
             botaoPausar.SetActive(false);
             telaPause.SetActive(true);
-
+            gameCanva.SetActive(false);
         }
     }
 
@@ -113,6 +131,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         botaoPausar.SetActive(true);
         telaPause.SetActive(false);
+        gameCanva.SetActive(true);
     }
 
     public void Quitar()
