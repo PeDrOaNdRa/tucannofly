@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 
@@ -137,6 +138,10 @@ public class GameManager : MonoBehaviour
     public void Quitar()
     {
         Application.Quit();
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene("InGame");
     }
 } 
 

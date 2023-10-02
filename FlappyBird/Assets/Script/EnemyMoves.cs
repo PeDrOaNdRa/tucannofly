@@ -5,18 +5,26 @@ using UnityEngine;
 public class EnemyMoves : MonoBehaviour
 {
     private Rigidbody2D enemyRb;
-    public float speed, speedY,posicao69,altura,alturaMax;
-    public Vector2 posTop,posBot,posToGo;
+    public float speed, speedY, posicao69;
+    public Vector2 posTop, posBot, posToGo;
 
-    public GameManager gM;
+    public GameObject localDisparo;
+    public GameObject projetilEnemy; 
+
+    public float delay = 2.5f;
+    public float intervalo;
+
+    private Animator anim;
+
+    //public GameManager gM;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        anim = GetComponent<Animator>();
         enemyRb = GetComponent<Rigidbody2D>();
-        gM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        //gM = GameObject.Find("GameManager").GetComponent<GameManager>();
 
     }
 
@@ -28,12 +36,13 @@ public class EnemyMoves : MonoBehaviour
             transform.position = new Vector2(transform.position.x - speed * Time.deltaTime, transform.position.y);
         }
 
-       if(transform.position.x <= posicao69)
+
+        if (transform.position.x <= posicao69)
         {
             transform.position = Vector2.MoveTowards(transform.position, posToGo, speedY);
         }
 
-        if(transform.position.y >= posTop.y)
+        if (transform.position.y >= posTop.y)
         {
             posToGo = posBot;
         }
@@ -41,6 +50,18 @@ public class EnemyMoves : MonoBehaviour
         {
             posToGo = posTop;
         }
-        
+
+
+        EnemyShot();
+
+    }
+    public void EnemyShot()
+    {
+        if (intervalo <= Time.time && transform.position.x <= posicao69)
+        {
+            Instantiate(projetilEnemy,localDisparo.transform.position,Quaternion.identity);
+            anim.SetTrigger("fire");
+            intervalo = Time.time + delay;
+        }
     }
 }

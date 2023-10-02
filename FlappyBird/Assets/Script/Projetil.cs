@@ -15,14 +15,6 @@ public class Projetil : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector2(transform.position.x + speed * Time.deltaTime, transform.position.y);
-        //DestruirObjeto();
+        transform.position = new Vector2(transform.position.x + speed * Time.deltaTime, transform.position.y); 
     }
-    /*void DestruirObjeto()
-    {
-        if (transform.position.x <= 10)
-        {
-            Destroy(gameObject);
-        }
-    }*/
 }
