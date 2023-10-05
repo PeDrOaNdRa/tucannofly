@@ -12,6 +12,8 @@ TagManager:
   - SensorTeto
   - teto
   - player
+  - enemy
+  - projetilEnemy
   layers:
   - Default
   - TransparentFX

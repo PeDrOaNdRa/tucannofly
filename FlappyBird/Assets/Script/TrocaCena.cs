@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class TrocaCena : MonoBehaviour
 {
+    public void PlayT()
+    {
+        SceneManager.LoadScene("InGame");
+    }
     public void Play()
     {
         SceneManager.LoadScene("Tutorial");

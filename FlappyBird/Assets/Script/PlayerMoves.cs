@@ -38,7 +38,7 @@ public class PlayerMoves : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstaculo")
         {
-            playerFx.Play();
+            //playerFx.Play(somMorte);
             gM.IsGameOver = true;
         }
     }
@@ -47,6 +47,11 @@ public class PlayerMoves : MonoBehaviour
         if (collision.gameObject.tag == "RayGun")
         {
             quantMunicao += 5;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "projetilEnemy")
+        {
+            gM.IsGameOver = true;
             Destroy(collision.gameObject);
         }
     }

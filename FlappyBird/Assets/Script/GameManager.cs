@@ -6,7 +6,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public bool IsGameOver, ImWithRayGun, IsPaused;
+    public bool IsGameOver, ImWithRayGun, IsPaused, EnemyOnDisplay;
     public GameObject obstaculo, obstaculo_i, municao, enemy;
 
     public float delay = 3;
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
 
     public void RespawnManager()
     {
-        if(intervalo <= Time.time)
+        if(intervalo <= Time.time && EnemyOnDisplay == false)
         {
             newrespawn();
             intervalo = Time.time + delay;
@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
         if (pontuacaof >= contadorInimigo)
         {
             Instantiate(enemy, new Vector3(13.59f,transform.position.y , transform.position.z), Quaternion.identity);
+            EnemyOnDisplay = true;
             contadorInimigo += pontoInimigoToAdd;
         }
     }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5060156774461373144}
   m_Layer: 0
   m_Name: ProjetilEnemy
-  m_TagString: Projetil
+  m_TagString: projetilEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,4 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8461ce5561e6f0c4aaa4bad59a93624a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -3
+  speed: -4

@@ -16,7 +16,7 @@ public class EnemyMoves : MonoBehaviour
 
     private Animator anim;
 
-    //public GameManager gM;
+    public GameManager gM;
 
 
     // Start is called before the first frame update
@@ -24,7 +24,7 @@ public class EnemyMoves : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         enemyRb = GetComponent<Rigidbody2D>();
-        //gM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gM = GameObject.Find("GameManager").GetComponent<GameManager>();
 
     }
 
@@ -55,6 +55,15 @@ public class EnemyMoves : MonoBehaviour
         EnemyShot();
 
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Projetil")
+        {
+            gM.pontuacaof++;
+            Destroy(collision.gameObject);
+            anim.SetTrigger("Explodes");
+        }
+    }
     public void EnemyShot()
     {
         if (intervalo <= Time.time && transform.position.x <= posicao69)
@@ -63,5 +72,9 @@ public class EnemyMoves : MonoBehaviour
             anim.SetTrigger("fire");
             intervalo = Time.time + delay;
         }
+    }
+    public void Destuir()
+    {
+        Destroy(this.gameObject);
     }
 }
