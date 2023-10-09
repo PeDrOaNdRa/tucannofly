@@ -7,13 +7,13 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public bool IsGameOver, ImWithRayGun, IsPaused, EnemyOnDisplay;
-    public GameObject obstaculo, obstaculo_i, municao, enemy;
+    public GameObject obstaculo, municao, enemy;
 
     public float delay = 3;
     public float delayMunicao = 20;
     public float pontuacaof,intervalo,intervaloMunicao,velocidadeDisparo;
-    public TextMeshProUGUI pontuacao,quantMunin;
-    public int spawnEnemy, maxObst = 1;
+    public TextMeshProUGUI pontuacao, pontuacaoGameOver, quantMunin;
+    public int maxObst = 1;
     public float speedToAdd;
     public float baseSpeed;
     public float checarPontuacao = 10, incrementoChecador = 10;
@@ -27,13 +27,16 @@ public class GameManager : MonoBehaviour
     public float contadorInimigo;
     public float pontoInimigoToAdd = 1;
 
+    public AudioSource gmAudio;
+    public AudioClip somMorte;
+
     // Start is called before the first frame update
     void Start()
     {
+        gmAudio = GetComponent<AudioSource>();
         pontuacaof = 0;
         intervalo = Time.time + delay;
-        intervaloMunicao = Time.time + delayMunicao;
-        spawnEnemy = Random.Range(-3, 7);
+        intervaloMunicao = Time.time + delayMunicao;        
         pontuacao.text = "0";
         quantMunin.text = "0";
 
@@ -52,6 +55,7 @@ public class GameManager : MonoBehaviour
         RespawnManager();
 
         pontuacao.text = pontuacaof.ToString();
+        pontuacaoGameOver.text = pontuacaof.ToString();
 
         SpawnEnemy();
 

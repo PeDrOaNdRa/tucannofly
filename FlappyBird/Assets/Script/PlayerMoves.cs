@@ -12,6 +12,11 @@ public class PlayerMoves : MonoBehaviour
     public GameObject projetil, sensorTeto;
     public ParticleSystem playerFx;
 
+    private bool IsTouchingTop;
+
+    public AudioSource playerSource;
+    public AudioClip somMorte, somTiro,somColeta,somGameOver;
+
 
     void Start()
     {
@@ -23,13 +28,13 @@ public class PlayerMoves : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Jump") && gM.IsGameOver == false)
+        if (Input.GetButtonDown("Jump") && gM.IsGameOver == false && IsTouchingTop == false)
         {
             playerRb.AddForce(forcaPulo);
             playerRb.velocity = new Vector2(0, 0);
         }
 
-        fire();
+        Fire();
         gM.quantMunin.text = quantMunicao.ToString();
         gM.checarMunin = quantMunicao;
     }
@@ -38,7 +43,9 @@ public class PlayerMoves : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstaculo")
         {
-            //playerFx.Play(somMorte);
+            playerSource.PlayOneShot(somMorte);
+            playerFx.Play();
+            playerSource.PlayOneShot(somGameOver);
             gM.IsGameOver = true;
         }
     }
@@ -46,19 +53,34 @@ public class PlayerMoves : MonoBehaviour
     {
         if (collision.gameObject.tag == "RayGun")
         {
+            playerSource.PlayOneShot(somColeta);
             quantMunicao += 5;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "projetilEnemy")
         {
+            playerSource.PlayOneShot(somMorte);
             gM.IsGameOver = true;
+            playerSource.PlayOneShot(somGameOver);
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.tag == "teto")
+        {
+            IsTouchingTop = true;
+        }
     }
-    private void fire()
+    public void OnTriggerExit2D(Collider2D collision)
+    {        
+        if (collision.gameObject.tag == "teto")
+        {
+            IsTouchingTop = false;
+        }
+    }
+    private void Fire()
     {
         if (Input.GetButtonDown("Fire1") && !gM.IsGameOver && quantMunicao > 0 && gM.IsPaused == false)
         {
+            playerSource.PlayOneShot(somTiro);
             quantMunicao--;
             Instantiate(projetil, localDisparo.position, Quaternion.identity);
             anim.SetTrigger("fire");

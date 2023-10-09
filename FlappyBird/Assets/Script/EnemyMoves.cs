@@ -18,6 +18,9 @@ public class EnemyMoves : MonoBehaviour
 
     public GameManager gM;
 
+    public AudioSource enemySource;
+    public AudioClip somMorte,somTiro;
+
 
     // Start is called before the first frame update
     void Start()
@@ -51,30 +54,42 @@ public class EnemyMoves : MonoBehaviour
             posToGo = posTop;
         }
 
-
-        EnemyShot();
-
+        //EnemyShot();
+        AcionarAnimTiro();
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Projetil")
         {
+            enemySource.PlayOneShot(somMorte);
             gM.pontuacaof++;
             Destroy(collision.gameObject);
             anim.SetTrigger("Explodes");
         }
     }
-    public void EnemyShot()
+
+    public void AcionarAnimTiro()
     {
         if (intervalo <= Time.time && transform.position.x <= posicao69)
         {
-            Instantiate(projetilEnemy,localDisparo.transform.position,Quaternion.identity);
             anim.SetTrigger("fire");
+            enemySource.PlayOneShot(somTiro);
             intervalo = Time.time + delay;
         }
     }
+
+    public void FogueteAtira()
+    {
+        if (transform.position.x <= posicao69)
+        {
+            Instantiate(projetilEnemy,localDisparo.transform.position,Quaternion.identity);
+        }
+    }
+
     public void Destuir()
     {
+        gM.EnemyOnDisplay = false;
         Destroy(this.gameObject);
     }
 }

@@ -6,7 +6,10 @@ public class Obstaculo : MonoBehaviour
 
     private GameManager gM;
 
-    private Animator animObst; 
+    private Animator animObst;
+
+    public AudioSource obstcSource;
+    public AudioClip somExplosion;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +43,7 @@ public class Obstaculo : MonoBehaviour
     {
         if (collision.gameObject.tag == "Projetil" || collision.gameObject.tag == "player")
         {
+            gM.gmAudio.PlayOneShot(gM.somMorte);
             gM.pontuacaof++;
             Destroy(collision.gameObject);
             animObst.SetTrigger("expObst");
