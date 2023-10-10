@@ -4786,6 +4786,7 @@ MonoBehaviour:
   sensorTeto: {fileID: 1235010715}
   playerFx: {fileID: 1661882073}
   playerSource: {fileID: 1413092924}
+  somPulo: {fileID: 8300000, guid: 8f558c4d4ee926a42a8cd90f42994ec6, type: 3}
   somMorte: {fileID: 8300000, guid: 013ab85e79f87db49b1468d7e373c326, type: 3}
   somTiro: {fileID: 8300000, guid: 87d5c47cdd057dd4fa9832f885e75720, type: 3}
   somColeta: {fileID: 8300000, guid: 9c8a05f2b671bea40927ff967aa1ca47, type: 3}
@@ -4859,7 +4860,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0

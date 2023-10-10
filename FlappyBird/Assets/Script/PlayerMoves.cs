@@ -15,7 +15,7 @@ public class PlayerMoves : MonoBehaviour
     private bool IsTouchingTop;
 
     public AudioSource playerSource;
-    public AudioClip somMorte, somTiro,somColeta,somGameOver;
+    public AudioClip somPulo,somMorte, somTiro,somColeta,somGameOver;
 
 
     void Start()
@@ -30,6 +30,7 @@ public class PlayerMoves : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && gM.IsGameOver == false && IsTouchingTop == false)
         {
+            playerSource.PlayOneShot(somPulo);
             playerRb.AddForce(forcaPulo);
             playerRb.velocity = new Vector2(0, 0);
         }
