@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class TrocaCena : MonoBehaviour
 {
     public GameObject primFala, segFala, terFala, quarFala, quiFala;
+
+    public void VoltarInicio()
+    {
+        SceneManager.LoadScene("StartScreen");
+    }
     public void PlayT()
     {
         SceneManager.LoadScene("InGame");

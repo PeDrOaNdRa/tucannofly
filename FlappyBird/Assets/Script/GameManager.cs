@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
 
     public float delay = 3;
     public float delayMunicao = 20;
-    public float pontuacaof,intervalo,intervaloMunicao,velocidadeDisparo;
-    public TextMeshProUGUI pontuacao, pontuacaoGameOver, quantMunin;
+    public float pontuacaof,intervalo,intervaloMunicao,velocidadeDisparo,highScore;
+    public TextMeshProUGUI pontuacao, pontuacaoGameOver, quantMunin, pontuacaoMax;
     public int maxObst = 1;
     public float speedToAdd;
     public float baseSpeed;
@@ -56,10 +56,15 @@ public class GameManager : MonoBehaviour
 
         pontuacao.text = pontuacaof.ToString();
         pontuacaoGameOver.text = pontuacaof.ToString();
+        pontuacaoMax.text = highScore.ToString();
 
         SpawnEnemy();
 
         GameOver();
+
+        highScore = PlayerPrefs.GetFloat("highscore");
+
+        HighScoreChecker();
     }
 
     public void RespawnManager()
@@ -148,5 +153,18 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("InGame");
     }
+    public void ScoreSave()
+    {
+        PlayerPrefs.SetFloat("highscore", pontuacaof);
+    }
+
+    public void HighScoreChecker()
+    {
+        if(pontuacaof >= highScore)
+        {
+            ScoreSave();
+        }
+    }
 } 
+
 

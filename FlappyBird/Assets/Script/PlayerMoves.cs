@@ -42,7 +42,7 @@ public class PlayerMoves : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Obstaculo")
+        if (other.gameObject.tag == "Obstaculo" && gM.IsGameOver == false)
         {
             playerSource.PlayOneShot(somMorte);
             playerFx.Play();
@@ -52,13 +52,13 @@ public class PlayerMoves : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "RayGun")
+        if (collision.gameObject.tag == "RayGun" && gM.IsGameOver == false)
         {
             playerSource.PlayOneShot(somColeta);
             quantMunicao += 5;
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.tag == "projetilEnemy")
+        if (collision.gameObject.tag == "projetilEnemy" && gM.IsGameOver == false)
         {
             playerSource.PlayOneShot(somMorte);
             gM.IsGameOver = true;
