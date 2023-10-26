@@ -10,10 +10,12 @@ public class TrocaCena : MonoBehaviour
     public void VoltarInicio()
     {
         SceneManager.LoadScene("StartScreen");
+        Time.timeScale = 1;
     }
     public void PlayT()
     {
         SceneManager.LoadScene("InGame");
+        Time.timeScale = 1;
     }
     public void Play()
     {
